@@ -21,6 +21,4 @@ class BlogController extends Controller
     {
         return new BlogResource($blog);
     }
-
-
 }

@@ -52,6 +52,7 @@
                 <div class="flex flex-col items-center justify-center pt-5 pb-6">
                     <img src="{{ $image->temporaryUrl() }}" class=" bg-cover w-full h-64" alt="">
                 </div>
+                
                 @else
                     <div class="flex flex-col items-center justify-center pt-5 pb-6">
                         <svg class="w-8 h-8 mb-4 text-gray-500 dark:text-gray-400" aria-hidden="true"
@@ -69,6 +70,7 @@
                     class="hidden" />
             </label>
         </div>
+        <div wire:loading wire:target="image">Uploading...</div>
 
         @error('image')
             <span class="error text-sm text-red-500">{{ $message }}</span>

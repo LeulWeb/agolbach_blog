@@ -69,12 +69,15 @@ class ShowBlog extends Component
         if (isset($this->image)) {
             $this->imageName = uniqid() . '.' . $this->image->extension();
             $this->image->storeAs('blogPictures', $this->imageName, 'public');
+            $this->imageName = 'blogPictures/' . $this->imageName;
+        } else {
+            $this->imageName = $this->blog->image;
         }
 
         $this->blog->update([
             'title' => $this->title,
             'description' => $this->description,
-            'image' => 'blogPictures/'.$this->imageName,
+            'image' => $this->imageName,
         ]);
 
         session()->flash('success', 'Blog updated successfully.');

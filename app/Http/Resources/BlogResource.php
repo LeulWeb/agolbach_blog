@@ -17,8 +17,8 @@ class BlogResource extends JsonResource
         return [
             'id' => $this->id,
             'title' => $this->title,
-            'description'=>$this->description,
-            'image'=> 'http://127.0.0.1:8000/'.$this->image,
+            'description' => nl2br(e($this->description)),
+            'image' => 'http://127.0.0.1:8000/' . $this->image,
         ];
     }
 }
